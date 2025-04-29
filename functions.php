@@ -156,17 +156,3 @@ if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
 		}
 	}
 endif;
-
-add_action('init', function () {
-    // Check if the post already exists to avoid duplication
-    $existing = get_page_by_title('wuh', OBJECT, 'post');
-    if (!$existing) {
-        wp_insert_post([
-            'post_title'    => 'wuh',
-            'post_content'  => 'wuh',
-            'post_status'   => 'publish',
-            'post_author'   => 1,
-            'post_type'     => 'post',
-        ]);
-    }
-});
